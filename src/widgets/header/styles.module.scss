@@ -1,0 +1,36 @@
+.header {
+	background-color: #14161a;
+}
+
+.logo {
+	color: gold;
+	font-size: 20px;
+}
+.container{
+margin: 0 auto;
+}
+.block{
+	display: flex;
+	height: 64px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.box{ 
+	display: flex;
+	column-gap: 10px;
+}
+.selector {
+	background-color: transparent;
+	border: 1px solid rgba(197, 197, 197, 0.438);
+	border-radius: 3px;
+	color: white;
+	font-size: 14px;
+	padding: 10px 15px;
+}
+
+.login{
+	border-radius: 3px;
+	padding: 11px 18px;
+	background-color: gold;
+}

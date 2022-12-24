@@ -1,0 +1,26 @@
+.slider{
+	color: white;
+	width: 100%;
+	display: flex;
+	padding: 60px 0;
+}
+
+.test{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.coin{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.symbol{
+	margin-right: 7px;
+}
+.image{
+	margin-bottom: 14px;
+}
+.box{
+	margin-bottom: 5px;
+}
