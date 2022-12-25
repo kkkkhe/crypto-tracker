@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { useGetTrendingCoinsQuery } from 'src/shared/api'
 import { Main } from '../src/pages/Main'
 import '../styles/Home.module.css'
+import { getCoins, getTrendingCoins } from 'src/shared/api'
 
-
-export default function Home() {
+export default function Home({data,coins}:any) {
   return (
     <>
       <Head>
@@ -15,8 +14,17 @@ export default function Home() {
         
       </Head>
       <main>
-        <Main/>
+        <Main trendCoins={data} coins={coins}/>
       </main>
     </>
   )
+}
+
+export async function getStaticProps(){
+  const data = await getTrendingCoins('USD')
+  const coins = await getCoins('USD')
+  return {
+    props: {data,coins},
+    revalidate: 10,
+  }
 }

@@ -1,0 +1,26 @@
+.grid{
+	display: flex;
+	justify-content: space-between;
+}
+.box{
+	display: flex;
+	gap: 220px;
+	align-items: center;
+	font-size: 13px;
+}
+.grid{
+padding: 20px 14px;
+}
+.id{
+	font-size: 14px;
+	color: darkgrey
+}
+.leftCol{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.card{
+	background-color: #16171a;
+	border-bottom: 1px solid rgb(117, 117, 117)
+}

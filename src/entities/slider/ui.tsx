@@ -5,16 +5,14 @@ import { Autoplay } from 'swiper';
 import Image from 'next/image'
 import { numberWithCommas } from 'src/shared/lib/number-with-commas';
 export const SlickSlider = ({data}:any) => {
-	console.log(data)
 	return (
 		<div className={style.slider}>
             <Swiper
 				spaceBetween={50}
 				slidesPerView={4}
-				loop={true}
 				autoplay={{
-				  delay: 2500,
-				  disableOnInteraction: true
+				delay: 2500,
+				disableOnInteraction: true
 				}}
 				modules={[Autoplay]}
 				>
@@ -23,7 +21,7 @@ export const SlickSlider = ({data}:any) => {
 					return (
 						<SwiperSlide key={id} className={style.test}>
 							<div className={style.coin}>
-								<Image className={style.image} src={image} alt={id} width={80} height={80}/>
+								<Image className={style.image} src={image} alt={id} width={80} height={80} />
 								<div className={style.box}>
 									<span className={style.symbol}>{symbol.toUpperCase()}</span>
 									<span style={{color: profit? "rgb(14, 203, 129)" : "red", fontWeight: 500,}}>
