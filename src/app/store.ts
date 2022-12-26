@@ -6,6 +6,7 @@ import { paginationModel } from "src/entities/pagination";
 
 const rootReducer = combineReducers({
   ...paginationModel.reducer,
+
   // [cryptoApi.reducerPath]: cryptoApi.reducer,
 });
 

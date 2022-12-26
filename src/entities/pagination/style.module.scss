@@ -1,0 +1,28 @@
+.pagination{
+	display: flex;
+	gap:30px;
+	color: gold;
+	font-size: 15px;
+	list-style-type: none;
+	align-items: center;
+}
+.box{
+	padding: 30px 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.disabled{
+	color: rgba(179, 152, 0, 0.747);
+}
+.active{
+	width: 31px;
+	height: 31px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.16);
+}

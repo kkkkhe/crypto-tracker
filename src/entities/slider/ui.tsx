@@ -28,7 +28,7 @@ export const SlickSlider = ({data}:any) => {
 										{price_change_percentage_24h.toFixed(2)}%
 									</span>
 								</div>
-								<span>₹ {numberWithCommas(current_price.toFixed(2))}</span>
+								<span>$ {numberWithCommas(current_price.toFixed(2))}</span>
 							</div>
 						</SwiperSlide>
 					)
