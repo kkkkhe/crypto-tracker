@@ -13,7 +13,7 @@ export const Main = ({trendCoins, coins}:any) => {
 	return (
 		<div className={style.main}>
 			<div className={style.banner}>
-				<Image src={image} alt={'sda'} fill className={style.test}/>
+				<Image src={image} alt={''} fill className={style.test}/>
 				<div className={`${style.hero} container`}>
 						<h2 className={style.title}>Crypto Hunter</h2>
 						<p className={style.paragraph}>Get All The Info Regarding Your Favorite Crypto Currency</p>

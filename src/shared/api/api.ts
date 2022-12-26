@@ -30,4 +30,10 @@ export const getCoins = async (currency: string) => {
   return coins;
 };
 
+export const getCoin = async (id: string) => {
+  const data = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`);
+  const coin = await data.json();
+  return coin;
+};
+
 // export const { useGetTrendingCoinsQuery } = cryptoApi;
