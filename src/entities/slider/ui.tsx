@@ -16,7 +16,7 @@ export const SlickSlider = ({data}:any) => {
 				}}
 				modules={[Autoplay]}
 				>
-				{data?.map(({image, id, symbol, price_change_percentage_24h, current_price}:any) => {
+				{data.map(({image, id, symbol, price_change_percentage_24h, current_price}:any) => {
 					const profit = price_change_percentage_24h > 0
 					return (
 						<SwiperSlide key={id} className={style.test}>

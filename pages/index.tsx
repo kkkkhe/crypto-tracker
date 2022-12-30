@@ -24,10 +24,7 @@ export default function Home({data,coins}:any) {
 export async function getStaticProps(){
   const data = await getTrendingCoins('USD')
   const coins = await getCoins('USD')
-  const reduxStore = initializeStore({})
-  reduxStore.dispatch(paginationModel.actions.setCurrentItems(coins.slice(0, 10)))
   return {
-    props: {data,coins, initialReduxState: reduxStore.getState()},
-    revalidate: 10,
+    props: {data,coins},
   }
 }

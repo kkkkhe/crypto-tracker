@@ -9,6 +9,7 @@ import Image from 'next/image'
 import image from '/public/banner2.jpg'
 export const Main = ({trendCoins, coins}:any) => {
 	const itemOffset = useAppSelector(paginationModel.selectors.itemOffset)
+	console.log(1)
 	const currentItems = coins.slice(itemOffset, itemOffset + 10)
 	return (
 		<div className={style.main}>
@@ -32,7 +33,7 @@ export const Main = ({trendCoins, coins}:any) => {
 					</div>
 				</div>
 				
-				{currentItems?.map((coin:any) => {
+				{currentItems.map((coin:any) => {
 					return (	
 						<div key={coin.id}>
 							<CoinCard coin={coin}/>

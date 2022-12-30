@@ -2,21 +2,21 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useMemo } from "react";
 import { combineReducers } from "redux";
 import { paginationModel } from "src/entities/pagination";
-// import { cryptoApi } from "src/shared/api";
+import { coinsApi } from "src/shared/api";
 
 const rootReducer = combineReducers({
   ...paginationModel.reducer,
 
-  // [cryptoApi.reducerPath]: cryptoApi.reducer,
+  [coinsApi.reducerPath]: coinsApi.reducer,
 });
 
 const createStore = (preloadedState: any) => {
   return configureStore({
     reducer: rootReducer,
     preloadedState,
-    // middleware(getDefaultMiddleware) {
-    //   return getDefaultMiddleware().concat(cryptoApi.middleware);
-    // },
+    middleware(getDefaultMiddleware) {
+      return getDefaultMiddleware().concat(coinsApi.middleware);
+    },
   });
 };
 let store: any;

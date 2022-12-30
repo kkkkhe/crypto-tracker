@@ -1,39 +1,20 @@
+import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
+import { DetailedCoin } from "src/pages/Detail"
+import { getCoin } from "src/shared/api"
+import dynamic from 'next/dynamic'
 
 const Coin = ({coin}:any) => {
-	const router = useRouter()
-	return (
-		<div>
-			{/* {coin.id} */}
-		</div>
-	)
+	return <DetailedCoin coin={coin}/>
+	
 }
 
-export async function getStaticPaths(context:any){
-	const res = await fetch(`https://api.coingecko.com/api/v3/coins`)
-	const coins = await res.json()
-	const paths = coins.map((coin:any) => ({
-		params: {id: coin.id}
-	}))
-	return {
-		paths, fallback:  'blocking',
-	}
+export const getServerSideProps:GetServerSideProps = async (context) => {
+	const {id} = context.query
+	const coin = await getCoin(id)
+return {
+	props: {coin}
 }
-
-export async function getStaticProps({params}:any){
-	const res = await fetch(`https://api.coingecko.com/api/v3/coins/${params.id}`)
-	const coin = await res.json()
-	if(!coin){
-		return {
-			notFound: true,
-			revalidate: 10
-		}
-	}
-	return {
-		props: {coin},revalidate: 10
-	}
 }
-
-
 
 export default Coin
