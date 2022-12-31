@@ -5,9 +5,9 @@ export const coinsApi = createApi({
   reducerPath: "coinsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.coingecko.com/api/v3/" }),
   endpoints: (builder) => ({
-    getHistoricalChart: builder.query<any, string | string[] | undefined>({
-      query: (id: string, days = 1) =>
-        `coins/${id}/market_chart?vs_currency=USD&days=${days}`,
+    getHistoricalChart: builder.query<any, any>({
+      query: ({ id, day }) =>
+        `coins/${id}/market_chart?vs_currency=USD&days=${day}`,
     }),
   }),
 });
